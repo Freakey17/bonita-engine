@@ -16,7 +16,7 @@ addons:
     token: $SONAR_TOKEN7
 
 script: - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
-./mvnw --show-version --errors test
+
 
 
 branches:
