@@ -10,7 +10,13 @@ before_cache:
   # ensure that we do not keep bonitasoft artifacts accross builds
   - rm -f $HOME/.m2/repository/org/bonitasoft
 
+addons:
+  sonarcloud:
+    organization: "freakey17-github"
+    token: $SONAR_TOKEN7
+
 script: ./mvnw --show-version --errors test
+- mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
 
 branches:
   only:
