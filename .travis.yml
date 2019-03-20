@@ -15,8 +15,9 @@ addons:
     organization: "freakey17-github"
     token: $SONAR_TOKEN7
 
-script: ./mvnw --show-version --errors test
-- mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
+script: - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
+./mvnw --show-version --errors test
+
 
 branches:
   only:
